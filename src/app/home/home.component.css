@@ -1,0 +1,11 @@
+.card-img-top{
+    border-radius: 10px;
+    border-style: dashed;
+    border-color: white;
+    height: 25vh;
+}
+.card-title{
+    padding-top: 15px;
+    font-weight: 600;
+    font-size: 20px;
+}

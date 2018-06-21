@@ -1,0 +1,35 @@
+<div class="container" style="text-align:center">
+    <div class="row" style="text-align: center">
+        <div class="col-md-12" style="font-size: 22px">Books, Characters & Houses</div>
+    </div>
+    <br>
+    <div *ngIf="everything" class="row">
+        <div *ngFor="let obj of everything.everything" class="card col-md-4" style="justify-content: center;">
+            <div *ngIf="(obj.url.indexOf('characters')>0)" class="card-img-top" style="background-color:coral"alt="Card image">
+                <div class="card-body" style="padding: 0 10px 0 10px">
+                    <h5 class="card-title">{{obj.name}}</h5>
+                    <span *ngIf="(obj.aliases[0]!='') && (obj.aliases.length==1)" style="font-size:0.9em">({{obj.aliases[0]}})</span>
+                    <span *ngIf="(obj.aliases.length>=2)" style="font-size:0.9em">({{obj.aliases[0]}},{{obj.aliases[1]}}...)</span>
+                    <p class="card-text" style="font-size:0.8em">Gender:{{obj.gender}}</p>
+                    <a class="btn btn-primary" (click)="openDialog(obj.url)">See Profile</a>
+                </div>
+            </div>
+            <div *ngIf="(obj.url.indexOf('houses')>0)" class="card-img-top" style="background-color:rgb(200, 212, 234);" alt="Card image">
+                    <div class="card-body" style="padding: 0 10px 0 10px;">
+                        <h5 class="card-title">{{obj.name}}</h5>
+                        <span>({{obj.region}})</span><br><br>
+                        <a class="btn btn-primary" (click)="openDialog(obj.url)">See Details</a>
+                    </div>
+            </div>
+            <div *ngIf="(obj.url.indexOf('books')>0)" class="card-img-top" style="background-color:rgb(80, 255, 197)" alt="Card image">
+                    <div class="card-body" style="padding: 0 10px 0 10px;">
+                        <h5 class="card-title">{{obj.name}}</h5>
+                        <span>({{obj.country}})</span>
+                        <p class="card-text" style="font-size:0.9em">Publisher : {{obj.publisher}}</p>
+                        <a class="btn btn-primary" (click)="openDialog(obj.url)">See Details</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,60 @@
+<div>
+  <h2 *ngIf="data.name"style="font-family:'Poppins', sans-serif" mat-dialog-title>{{data.name}}</h2>
+  <h2 *ngIf="!data.name"style="font-family:'Poppins', sans-serif" mat-dialog-title>{{data.aliases}}</h2>
+  <hr>
+  <mat-dialog-content>
+      <div *ngIf="(data.url.indexOf('characters')>0)">
+        <p style="font-family: 'Source Sans Pro', sans-serif">
+         Aliases: {{data.aliases}}<br>
+         Allegiances: {{data.allegiances}}<br>
+         Books: {{data.Books}}<br>
+         Born: {{data.born}}<br>
+         Culture: {{data.culture}}<br>
+         Died: {{data.died}}<br>
+         Father: {{data.father}}<br>
+         Gender: {{data.gender}}<br>
+         Mother: {{data.mother}}<br>
+         Played By: {{data.playedBy}}<br>
+         POV Books: {{data.books}}<br>
+         Spouse: {{data.spouse}}<br>
+         Titles: {{data.titles}}<br>
+        </p><br>
+        <strong>TV Series: {{data.tvSeries}}</strong>
+      </div>
+      <div *ngIf="(data.url.indexOf('houses')>0)" >
+        <p style="font-family: 'Source Sans Pro', sans-serif">
+          Ancestral Weapons: {{data.ancestralWeapons}}<br>
+          Cadet Branches: {{data.cadetBranches}}<br>
+          Coat Of Arms: {{data.coatOfArms}}<br>
+          Current Lord: {{data.currentLord}}<br>
+          Died Out: {{data.diedOut}}<br>
+          Founded: {{data.founded}}<br>
+          Founder: {{data.founder}}<br>
+          Heir: {{data.heir}}<br>
+          Over Lord: {{data.overlord}}<br>
+          Region: {{data.region}}<br>
+          Seats: {{data.seats}}<br>
+          Sworn Members: {{data.swornMembers}}<br>
+          Titles: {{data.titles}}<br>
+        </p><br>
+        <strong>Words: {{data.words}}</strong>
+      </div>
+      <div *ngIf="(data.url.indexOf('books')>0)">
+        <p style="font-family: 'Source Sans Pro', sans-serif">
+          ISBN: {{data.isbn}}<br>
+          Country: {{data.country}}<br>
+          Characters: {{data.characters}}<br>
+          Authors: {{data.authors}}<br>
+          Media Type: {{data.mediaType}}<br>
+          Number Of Pages: {{data.numberOfPages}}<br>
+          POV Characters: {{data.povCharacters}}<br>
+          Released: {{data.released}}<br>
+        </p><br>
+        <strong>Publisher:{{data.publisher}}</strong>
+      </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+      <button (click)="onCloseConfirm()">Close</button>
+  </mat-dialog-actions>
+</div>
